@@ -22,10 +22,31 @@ INSTALLATION
 -----------
 To compile and install st system-wide:
 
-    $ cd ~/repos/st-mariomerlano
-    $ sudo make clean
-    $ sudo make
-    $ sudo make install
+    $ cd ~/repos/st-mariomerlano/st
+    $ sudo make clean install
+
+SETUP WITH DWM ON SLACKWARE
+--------------------------
+1. Install st from this repository:
+   ```
+   cd ~/repos/st-mariomerlano/st
+   sudo make clean install
+   ```
+
+2. Test st by running:
+   ```
+   st
+   ```
+
+3. Switch to dwm as your window manager:
+   ```
+   sudo xwmconfig
+   ```
+
+4. Launch your desktop environment:
+   ```
+   startx
+   ```
 
 FEATURES
 --------
@@ -60,7 +81,7 @@ CONFIGURATION
 ------------
 To customize st further, edit config.h and recompile:
 
-    $ cd ~/repos/st-mariomerlano
+    $ cd ~/repos/st-mariomerlano/st
     $ nvim config.h     # Make your changes
     $ sudo make clean install
 
@@ -83,4 +104,3 @@ TROUBLESHOOTING
 
 3. Problem: Terminal colors look wrong
    Solution: Check your colorname[] array in config.h and ensure it has proper RGB values
-
