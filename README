@@ -52,7 +52,7 @@ FEATURES
 --------
 This build of st includes several customizations:
 
-* Uses JetBrains Mono font (14px) by default
+* Uses Monospace font (28px) by default
 * Windows/Super key (Mod4) as modifier key instead of Alt
 * Dracula-inspired color scheme
 * 4-space tabs instead of 8-space tabs
@@ -81,8 +81,7 @@ CONFIGURATION
 ------------
 To customize st further, edit config.h and recompile:
 
-    $ cd ~/repos/st-mariomerlano/st
-    $ nvim config.h     # Make your changes
+    $ nvim ~/repos/st-mariomerlano/st/config.h     # Make your changes
     $ sudo make clean install
 
 Main configuration options:
