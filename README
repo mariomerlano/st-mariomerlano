@@ -52,7 +52,7 @@ FEATURES
 --------
 This build of st includes several customizations:
 
-* Uses Monospace font (28px) by default
+* Uses Monospace font (32px) by default
 * Windows/Super key (Mod4) as modifier key instead of Alt
 * Dracula-inspired color scheme
 * 4-space tabs instead of 8-space tabs
