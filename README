@@ -1,2 +1,86 @@
-# st-mariomerlano
-Simple st configuration.
+ST-MARIOMERLANO
+===============
+
+Author: Mario Merlano
+License: MIT
+
+DESCRIPTION
+-----------
+Personal build of st (Simple Terminal) from suckless.org.
+ST is a minimalist terminal emulator for X.
+
+REQUIREMENTS
+-----------
+* Xorg server (libX11, libXinerama)
+* C compiler (gcc or clang)
+* Make
+* Freetype headers (libfreetype6-dev)
+* Fontconfig headers (libfontconfig-dev)
+* Root privileges (for system-wide installation)
+
+INSTALLATION
+-----------
+To compile and install st system-wide:
+
+    $ cd ~/repos/st-mariomerlano
+    $ sudo make clean
+    $ sudo make
+    $ sudo make install
+
+FEATURES
+--------
+This build of st includes several customizations:
+
+* Uses JetBrains Mono font (14px) by default
+* Windows/Super key (Mod4) as modifier key instead of Alt
+* Dracula-inspired color scheme
+* 4-space tabs instead of 8-space tabs
+* Block cursor style
+* Alt-arrow to move between words
+* Ctrl+Shift+c/v for copy/paste
+
+KEYBOARD SHORTCUTS
+----------------
+General:
+    Ctrl+Shift+C      Copy selected text
+    Ctrl+Shift+V      Paste from clipboard
+    Ctrl+Shift+Y      Paste from primary selection
+
+Font Size:
+    Ctrl+Shift+PageUp    Increase font size
+    Ctrl+Shift+PageDown  Decrease font size
+    Ctrl+Shift+Home      Reset font size
+
+Mouse:
+    Middle-click       Paste from primary selection
+    Shift+MouseWheel   Scroll page up/down
+    Alt+MouseDrag      Rectangular selection
+
+CONFIGURATION
+------------
+To customize st further, edit config.h and recompile:
+
+    $ cd ~/repos/st-mariomerlano
+    $ nvim config.h     # Make your changes
+    $ sudo make clean install
+
+Main configuration options:
+- font: Font family, style and size
+- borderpx: Border width in pixels
+- tabspaces: Number of spaces per tab
+- colorname: Terminal colors (using Dracula theme by default)
+- defaultfg/defaultbg: Default foreground/background colors
+- cursorshape: Cursor shape (2 = block, 4 = underline, 6 = bar)
+- shortcuts: Keyboard shortcuts
+
+TROUBLESHOOTING
+--------------
+1. Problem: Terminal displays garbled characters
+   Solution: Make sure the font specified in config.h is installed on your system
+
+2. Problem: Copy/paste doesn't work
+   Solution: Ensure you're using Ctrl+Shift+C and Ctrl+Shift+V, not just Ctrl+C/V
+
+3. Problem: Terminal colors look wrong
+   Solution: Check your colorname[] array in config.h and ensure it has proper RGB values
+
